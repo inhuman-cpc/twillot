@@ -22,7 +22,15 @@ chrome.webRequest.onSendHeaders.addListener(
       return
     }
 
+    console.log('syncAuthHeaders: url', { url })
+
     await syncAuthHeaders(details.requestHeaders)
+
+    const storage = await chrome.storage.local.get()
+    console.log('syncAuthHeaders: storage', {
+      url,
+      ...storage,
+    })
   },
   {
     types: ['xmlhttprequest'],

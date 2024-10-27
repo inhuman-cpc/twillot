@@ -203,6 +203,12 @@ export async function syncAuthHeaders(
   }
 
   if (!csrf || !token || !uuid || !transaction_id) {
+    console.log('syncAuthHeaders: missing headers', {
+      csrf,
+      token,
+      uuid,
+      transaction_id,
+    })
     return
   }
 
@@ -214,5 +220,7 @@ export async function syncAuthHeaders(
       uuid,
       transaction_id,
     })
+  } else {
+    console.log('syncAuthHeaders: no user id')
   }
 }
