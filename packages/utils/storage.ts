@@ -196,13 +196,15 @@ export async function syncAuthHeaders(
     } else if (t === 'authorization') {
       token = o || ''
     } else if (t === 'x-client-uuid') {
+      // uuid is optional
+      // 相同的账户，chrome 没有，edge 有
       uuid = o || ''
     } else if (t === 'x-client-transaction-id') {
       transaction_id = o || ''
     }
   }
 
-  if (!csrf || !token || !uuid || !transaction_id) {
+  if (!csrf || !token || !transaction_id) {
     console.log('syncAuthHeaders: missing headers', {
       csrf,
       token,

@@ -2,7 +2,7 @@
   "author": "twillot",
   "description": "Web extensions on X",
   "devDependencies": {
-    "@crxjs/vite-plugin": "2.0.0-beta.25",
+    "@crxjs/vite-plugin": "2.0.0-beta.28",
     "@faker-js/faker": "^8.4.1",
     "@jackfranklin/test-data-bot": "^2.1.0",
     "@solidjs/testing-library": "^0.8.8",
