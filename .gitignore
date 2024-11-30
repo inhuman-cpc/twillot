@@ -23,3 +23,5 @@ package
 # secrets
 secrets.*.js
 .aider*
+
+.next

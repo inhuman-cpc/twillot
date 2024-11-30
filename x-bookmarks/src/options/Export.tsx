@@ -126,7 +126,11 @@ const ExportPage = () => {
       params[field.name] = form[field.name].value
     })
     params['custom_save_path'] = form['custom_save_path']?.value
-    const records = await getTweetsContainsMedia(params.media_type, true, 10)
+    const records = await getTweetsContainsMedia(
+      params.media_type,
+      true,
+      maxMediaRows(),
+    )
     const mediaList = []
     for (const record of records) {
       const list = getMediaItemsIncludeQuote(record, params.media_type)
@@ -281,17 +285,21 @@ const ExportPage = () => {
             <div class="my-5">
               <button
                 type="submit"
-                class="mb-2 me-8 w-32 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                class="mb-2 me-8 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
               >
-                Download
+                <Show when={isLimited()} fallback="Unlimited Download">
+                  Download
+                </Show>
               </button>
-              <a
-                href={PRICING_URL}
-                target="_blank"
-                class="mb-2 me-2 inline-block rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
-              >
-                Unlock Unlimited Exporting
-              </a>
+              <Show when={isLimited()}>
+                <a
+                  href={PRICING_URL}
+                  target="_blank"
+                  class="mb-2 me-2 inline-block rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+                >
+                  Unlock Unlimited Exporting
+                </a>
+              </Show>
             </div>
           </form>
         </div>
@@ -365,9 +373,11 @@ const ExportPage = () => {
                 fallback={
                   <button
                     type="submit"
-                    class={`mb-2 me-8 flex w-36 items-center justify-center gap-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
+                    class={`mb-2 me-8 flex items-center justify-center gap-2 rounded-lg bg-blue-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800`}
                   >
-                    Download
+                    <Show when={isLimited()} fallback="Unlimited Download">
+                      Download
+                    </Show>
                   </button>
                 }
               >
@@ -386,13 +396,15 @@ const ExportPage = () => {
                 </button>
               </Show>
 
-              <a
-                href={PRICING_URL}
-                target="_blank"
-                class="mb-2 me-4 inline-block rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
-              >
-                Unlock Unlimited Exporting
-              </a>
+              <Show when={isLimited()}>
+                <a
+                  href={PRICING_URL}
+                  target="_blank"
+                  class="mb-2 me-4 inline-block rounded-lg bg-gradient-to-br from-purple-600 to-blue-500 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gradient-to-bl focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
+                >
+                  Unlock Unlimited Exporting
+                </a>
+              </Show>
             </div>
           </form>
         </div>
