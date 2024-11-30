@@ -4,6 +4,10 @@
 
 ## Changelog
 
+## Nov 30, 2024 Update
+
+- Fixed a bug when exporting media files
+
 ## Oct 2, 2024 Update
 
 - Fixed a bug that caused the extension to stop smart tagging
