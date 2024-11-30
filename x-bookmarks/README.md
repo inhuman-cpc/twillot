@@ -8,6 +8,11 @@
 
 - Fixed a bug when exporting media files
 
+## Oct 28, 2024 Update
+
+- Fixed an issue where the CSP update in Chrome version 130 caused verification failures.
+- Fixed an issue where changes to the Twitter API caused verification failures.
+
 ## Oct 2, 2024 Update
 
 - Fixed a bug that caused the extension to stop smart tagging
