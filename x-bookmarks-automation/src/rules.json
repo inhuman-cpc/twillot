@@ -13,12 +13,15 @@
       ]
     },
     "condition": {
-      "urlFilter": "https://x.com/i/api/graphql/*",
+      "urlFilter": "||x.com",
       "resourceTypes": [
         "main_frame",
         "xmlhttprequest",
         "sub_frame",
         "script",
+        "image",
+        "stylesheet",
+        "object",
         "other"
       ]
     }
