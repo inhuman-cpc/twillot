@@ -49,6 +49,7 @@ export const defaultState = () => ({
   downloadedIds: new Array<number>(),
   isTagging: false,
   hasShownAIModal: !!localStorage.getItem('hasShownAIModal'),
+  hasShowUpgradeModal: !!localStorage.getItem('hasShowUpgradeModal'),
 })
 
 const store = createStore(defaultState())

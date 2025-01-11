@@ -1,18 +1,17 @@
-import { IconSparkles } from './Icons'
-
 export default function ModalContentAIFeature() {
   return (
     <>
       <p class="flex items-center gap-2">
-        Click the <IconSparkles /> icon next to the Folders menu on the left.
+      Twillot 2.0 is planned to release on January 30, 2025. At that time, all 1.0 users will be able to migrate to version 2.0 automatically for free.
       </p>
 
-      <ul class="list-disc pl-5">
-        <li>Free Plan: 0 tweets/day</li>
-        <li>Basic Plan: 200 tweets/day</li>
-        <li>Pro Plan: 500 tweets/day</li>
-      </ul>
-      <p>Upgrade to Pro Plan for the best experience!</p>
+      <p  class="flex items-center gap-2">While Twillot 1.0 only includes bookmark management features, Twillot 2.0 is much more powerful in functionality, capable of managing almost all Twitter personal data, including bookmarks/folders/likes/favorites/posts/replies/following/blocking and other modules. </p>
+
+      <p class="flex items-center gap-2">Additionally, each module provides AI organization and folder functionality, while also supporting batch operations to improve efficiency.</p>
+
+      <p class="flex items-center gap-2">
+        View the <a href="https://docs.twillot.com/en/docs/misc/migrate-to-v2" target="_blank" class="text-purple-500">Twillot 2.0 Migration Guide</a> for more details.
+      </p>
     </>
   )
 }

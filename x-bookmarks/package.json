@@ -26,5 +26,5 @@
     "zip": "npm run build && node src/zip.js"
   },
   "type": "module",
-  "version": "1.9.1"
+  "version": "1.9.2"
 }

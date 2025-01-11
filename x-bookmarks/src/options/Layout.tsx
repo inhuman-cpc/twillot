@@ -338,18 +338,18 @@ export const Layout = (props) => {
             <IconUp />
           </button>
           <Modal
-            visible={!store.hasShownAIModal}
-            title="Auto-organize Bookmarks with AI"
-            okText="Start Organizing with AI"
+            visible={!store.hasShowUpgradeModal}
+            title="Twillot 2.0 is coming soon!"
+            okText="Get Early Access"
             onOk={async () => {
               await chrome.tabs.create({
-                url: PRICING_URL,
+                url: 'https://getwaitlist.com/waitlist/24019',
               })
-              setStore('hasShownAIModal', true)
-              localStorage.setItem('hasShownAIModal', 'true')
+              setStore('hasShowUpgradeModal', true)
+              localStorage.setItem('hasShowUpgradeModal', 'true')
             }}
             onCancel={() => {
-              setStore('hasShownAIModal', true)
+              setStore('hasShowUpgradeModal', true)
             }}
           >
             <ModalContentAIFeature />
